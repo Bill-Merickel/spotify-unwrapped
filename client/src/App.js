@@ -5,10 +5,9 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
-import { accessToken, logout, getCurrentUserProfile } from './spotify';
-import { catchErrors } from './utils';
+import { accessToken, logout } from './spotify';
+import { Login, Profile, TopArtists, TopTracks, Playlists, Playlist } from './pages';
 import { GlobalStyle } from './styles';
-import { Login, Profile, TopArtists, TopTracks } from './pages';
 import styled from 'styled-components/macro';
 
 const StyledLogoutButton = styled.button`
@@ -41,27 +40,19 @@ function ScrollToTop() {
 
 function App() {
   const [token, setToken] = useState(null);
-  const [profile, setProfile] = useState(null);
 
   useEffect(() => {
     setToken(accessToken);
-
-    const fetchData = async () => {
-      const { data } = await getCurrentUserProfile();
-      setProfile(data);
-    };
-
-    catchErrors(fetchData());
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <GlobalStyle />
-      <header className="App-header">
+
       {!token ? (
-          <Login />
-        ) : (
-          <>
+        <Login />
+      ) : (
+        <>
           <StyledLogoutButton onClick={logout}>Log Out</StyledLogoutButton>
 
           <Router>
@@ -69,16 +60,15 @@ function App() {
             <Routes>
               <Route path="/top-artists" element={<TopArtists />}/>
               <Route path="/top-tracks" element={<TopTracks />}/>
-              <Route path="/playlists/:id" element={<h1>Playlist</h1>}/>
-              <Route path="/playlists" element={<h1>Playlists</h1>}/>
+              <Route path="/playlists/:id" element={<Playlist />}/>
+              <Route path="/playlists" element={<Playlists />}/>
               <Route path="/" element={
                 <Profile />
               }/>
             </Routes>
           </Router>
-          </>
-        )}
-      </header>
+        </>
+      )}
     </div>
   );
 }
