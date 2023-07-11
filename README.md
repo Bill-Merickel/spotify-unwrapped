@@ -2,6 +2,10 @@
 
 This is a web app built using Node.js and React with the Spotify API that allows the user to view various data about their spotify account, such as number of followers, top tracks, and playlists. The web app also allows the user to sort tracks in their playlist sorted by different metrics, such as danceability and tempo. To visit the app, click on [this link](https://spotify-unwrapped.onrender.com).
 
+<img width="1486" alt="Screenshot 2023-07-11 at 11 52 35 AM" src="https://github.com/Bill-Merickel/spotify-unwrapped/assets/20192754/a77b9c08-c77c-4111-a6aa-b05611962032">
+<img width="1478" alt="Screenshot 2023-07-11 at 11 53 04 AM" src="https://github.com/Bill-Merickel/spotify-unwrapped/assets/20192754/25168ffb-5b1e-4192-9fa2-a7a825595128">
+
+
 ## Local Installation & Set Up
 
 1. Register a Spotify App in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/) and add `http://localhost:8888/callback` as a Redirect URI in the app settings
