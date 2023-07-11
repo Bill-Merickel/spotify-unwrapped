@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
-  Routes,
+  Switch,
   Route,
   useLocation,
 } from 'react-router-dom';
@@ -57,15 +57,24 @@ function App() {
 
           <Router>
             <ScrollToTop />
-            <Routes>
-              <Route path="/top-artists" element={<TopArtists />}/>
-              <Route path="/top-tracks" element={<TopTracks />}/>
-              <Route path="/playlists/:id" element={<Playlist />}/>
-              <Route path="/playlists" element={<Playlists />}/>
-              <Route path="/" element={
+
+            <Switch>
+              <Route path="/top-artists">
+                <TopArtists />
+              </Route>
+              <Route path="/top-tracks">
+                <TopTracks />
+              </Route>
+              <Route path="/playlists/:id">
+                <Playlist />
+              </Route>
+              <Route path="/playlists">
+                <Playlists />
+              </Route>
+              <Route path="/">
                 <Profile />
-              }/>
-            </Routes>
+              </Route>
+            </Switch>
           </Router>
         </>
       )}
