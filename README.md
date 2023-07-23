@@ -2,6 +2,8 @@
 
 This is a web app built using Node.js and React with the Spotify API that allows the user to view various data about their spotify account, such as number of followers, top tracks, and playlists. The web app also allows the user to sort tracks in their playlist sorted by different metrics, such as danceability and tempo. To visit the app, click on [this link](https://spotify-unwrapped.onrender.com).
 
+**NOTE:** Due to Spotify API changes, the app is currently limited to 25 users that must be added into the Spotify Developer Portal. If you are interested in trying the app, email me your name and email address linked to your Spotify account.
+
 <img width="1486" alt="Screenshot 2023-07-11 at 11 52 35 AM" src="https://github.com/Bill-Merickel/spotify-unwrapped/assets/20192754/a77b9c08-c77c-4111-a6aa-b05611962032">
 <img width="1478" alt="Screenshot 2023-07-11 at 11 53 04 AM" src="https://github.com/Bill-Merickel/spotify-unwrapped/assets/20192754/25168ffb-5b1e-4192-9fa2-a7a825595128">
 
@@ -38,13 +40,9 @@ This is a web app built using Node.js and React with the Spotify API that allows
 
 2. Click on the **New Web Service** button under the **Web Services** option, then click on the **Connect Account** button under the GitHub menu.
 
-    ```shell
-    heroku git:remote -a your-app-name
-    ```
-
 3. Click on the **Configure** link and you can give permission to select the repository with the app, then click on the green **Install** button to give repository access to Render.
 
-3. Click on the **Connect** button and you will be brought to a screen where you are required to provide various inputs for your app deployment. Put in a meaningful name in the **Name** field and complete the other fields. For the **Build Command**, put
+4. Click on the **Connect** button and you will be brought to a screen where you are required to provide various inputs for your app deployment. Put in a meaningful name in the **Name** field and complete the other fields. For the **Build Command**, put
 
    ```shell
    npm install; npm run build
@@ -56,7 +54,7 @@ This is a web app built using Node.js and React with the Spotify API that allows
    npm run start
    ```
 
-3. Select the free plan in the **Plans** section and then scroll down further and click the **Advanced** button. Here, you can upload your **.env** file or enter your secrets manually.
+5. Select the free plan in the **Plans** section and then scroll down further and click the **Advanced** button. Here, you can upload your **.env** file or enter your secrets manually.
 
    Based on the values in your `.env` file, the `CLIENT_ID`, `CLIENT_SECRET`, `REDIRECT_URI`, and `FRONTEND_URI` key value pairs. Make sure to replace the `localhost` URLs with your Render app's URL.
 
@@ -65,4 +63,4 @@ This is a web app built using Node.js and React with the Spotify API that allows
    FRONTEND_URI: http://your-app-name.onrender.com
    ```
 
-5. Click on the **Create Web Service** field and the deployment process will start. Wait for a while until the deployment is finished. Once your app deployment is finished and your app is live, you can click on the deployed application URL displayed at the top of the page to view your app.
+6. Click on the **Create Web Service** field and the deployment process will start. Wait for a while until the deployment is finished. Once your app deployment is finished and your app is live, you can click on the deployed application URL displayed at the top of the page to view your app.
